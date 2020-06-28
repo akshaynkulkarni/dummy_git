@@ -38,7 +38,30 @@ int main()
         cin >> str >> str1;
 
         cout << "You entered: " << str << " and " << str1 << endl;
-	// We will write this code, once we merge to master branch
+
+	auto pos = str.find(str1);
+
+	if (pos) {
+	string str2 = str.substr(pos, str1.length());
+
+	if (str2.length())
+		cout << " \"" << str2 << "\" found in " << str << endl;
+	} else
+	cout << "Not found : " << str1 << " in " << str << endl;
+
+	// The above code, we have used cin.. Unfortunately, it stops reading on finding space.
+	// So, we the solution is to use getline(console,var);
+	// Append the string in easy way
+	string fstr, sstr;
+        cout << "Please enter two strings: " << endl;
+
+	getline(cin, fstr);
+        cout << "1st string entered : " << fstr << endl;
+        getline(cin, sstr);
+        cout << "2nd string entered : " << sstr << endl;
+
+	cout << " First + Second string = " << fstr + sstr << endl;
+	cout << " Second + First string = " << sstr + fstr << endl;
 
 	return 0;
 }

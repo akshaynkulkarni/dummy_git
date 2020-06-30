@@ -3,6 +3,25 @@
 
 using namespace std;
 
+void demo_getline(void)
+{
+
+	// The above code, we have used cin.. Unfortunately, it stops reading on finding space.
+	// So, we the solution is to use getline(console,var);
+	// Append the string in easy way
+	string fstr;
+        string sstr;
+	cout << "Please enter two strings: " << endl;
+	getline(cin, fstr);
+	cout << "1st string entered : " << fstr << endl;
+	getline(cin, sstr);
+	cout << "2nd string entered : " << sstr << endl;
+
+	cout << " First + Second string = " << fstr + sstr << endl;
+	cout << " Second + First string = " << sstr + fstr << endl;
+
+}
+
 int main()
 {
 	string str;
@@ -38,7 +57,6 @@ int main()
         cin >> str >> str1;
 
         cout << "You entered: " << str << " and " << str1 << endl;
-
 	auto pos = str.find(str1);
 
 	if (pos) {
@@ -49,19 +67,7 @@ int main()
 	} else
 	cout << "Not found : " << str1 << " in " << str << endl;
 
-	// The above code, we have used cin.. Unfortunately, it stops reading on finding space.
-	// So, we the solution is to use getline(console,var);
-	// Append the string in easy way
-	string fstr, sstr;
-        cout << "Please enter two strings: " << endl;
-
-	getline(cin, fstr);
-        cout << "1st string entered : " << fstr << endl;
-        getline(cin, sstr);
-        cout << "2nd string entered : " << sstr << endl;
-
-	cout << " First + Second string = " << fstr + sstr << endl;
-	cout << " Second + First string = " << sstr + fstr << endl;
+        demo_getline();
 
 	return 0;
 }
